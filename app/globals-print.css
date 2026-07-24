@@ -1,0 +1,62 @@
+/* ---------- Yazdırma Kuralları ---------- */
+
+@page {
+  size: A4 portrait;
+  margin: 10mm 10mm 15mm 10mm;
+}
+
+@media print {
+  /* Tüm öğeleri gizle; sadece belgeyi göster */
+  body * {
+    visibility: hidden;
+    page-break-inside: avoid;
+  }
+
+  #belge-a4,
+  #belge-a4 * {
+    visibility: visible;
+  }
+
+  #belge-a4 {
+    position: absolute;
+    inset: 0;
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none !important;
+    transform: none !important;
+    page-break-inside: avoid;
+  }
+
+  /* Maddeleri sayfa ortasında bölme */
+  .clause,
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* İmza bloklarını bir arada tut */
+  .signature-block {
+    page-break-inside: avoid;
+  }
+
+  /* Tablo satırlarını bölme */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* Başlıkları sayfa sonunda bölme */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* Satır aralıklarını koru */
+  p {
+    page-break-inside: avoid;
+  }
+
+  /* Renkli fon, yazıcıda açık renkli olacak */
+  .signature-block {
+    border-top: 1px solid #333;
+  }
+}

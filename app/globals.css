@@ -1,0 +1,67 @@
+@import url('./globals-print.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- Custom Utility Classes ---------- */
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+.clause {
+  page-break-inside: avoid;
+  margin-bottom: 0.5rem;
+}
+
+/* Contenteditable stillemesi */
+[contenteditable] {
+  outline: none;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Drag-drop görsel geri bildirim */
+.dragging {
+  opacity: 0.5;
+}
+
+.drag-over {
+  background-color: #f3f4f6;
+  border: 2px dashed #22314E;
+}
+
+/* TipTap editör stil düzeltmeleri */
+.ProseMirror {
+  outline: none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+/* ---------- Responsive fix ---------- */
+@media (max-width: 1024px) {
+  .md\:hidden {
+    display: none !important;
+  }
+}
