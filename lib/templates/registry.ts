@@ -1,4 +1,4 @@
-export const PLATFORM_ADI = "KolayBelge";
+export const PLATFORM_ADI = "KolayBelgeAl";
 
 /** 4 ana kategori — ana sayfa bu sıraya göre listeler */
 export const KATEGORILER = [
